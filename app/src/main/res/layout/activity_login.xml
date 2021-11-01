@@ -66,6 +66,7 @@
             android:imeActionLabel="Send"
             android:imeOptions="actionUnspecified"
             android:inputType="phone"
+
             android:maxLength="10"
             android:maxLines="1"
             android:singleLine="true"
