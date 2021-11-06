@@ -21,7 +21,7 @@ class MainActivity : AppCompatActivity() {
             binding.tabs, binding.viewPager,
             TabLayoutMediator.TabConfigurationStrategy { tab: TabLayout.Tab, i: Int ->
                 when (i) {
-                    0 -> tab.text = "CHATAS"
+                    0 -> tab.text = "CHATS"
                     1 -> tab.text = "PEOPLE"
                 }
             }).attach()
