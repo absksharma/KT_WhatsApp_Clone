@@ -1,4 +1,4 @@
-package com.example.kt_whatsapp_clone
+package com.example.kt_whatsapp_clone.auth
 
 import android.content.Intent
 import android.os.Bundle
@@ -45,7 +45,7 @@ class LoginActivity : AppCompatActivity() {
             setPositiveButton("OK") { _, _ ->
                 showOtpActivity()
             }
-            setNegativeButton("EDIT") { dialog, which ->
+            setNegativeButton("EDIT") { dialog, _ ->
                 dialog.dismiss()
             }
             setCancelable(false)
