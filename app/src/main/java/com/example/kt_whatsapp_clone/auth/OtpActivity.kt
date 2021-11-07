@@ -1,4 +1,4 @@
-package com.example.kt_whatsapp_clone
+package com.example.kt_whatsapp_clone.auth
 
 import android.app.ProgressDialog
 import android.content.Context
@@ -14,6 +14,7 @@ import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.isVisible
+import com.example.kt_whatsapp_clone.R
 import com.example.kt_whatsapp_clone.databinding.ActivityOtpBinding
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.google.firebase.FirebaseException
@@ -212,8 +213,8 @@ class OtpActivity : AppCompatActivity(), View.OnClickListener {
                 var code = binding.sentcodeEt.text.toString()
                 if (code.isNotEmpty() && !mVerificationId.isNullOrEmpty()) {
 
-                    progressDialog = createProgressDialog("Please wait...", false)
-                    progressDialog.show()
+//                    progressDialog = createProgressDialog("Please wait...", false)
+//                    progressDialog.show()
                     val credential = PhoneAuthProvider.getCredential(mVerificationId!!, code)
                     signInWithPhoneAuthCredential(credential)
                     Toast.makeText(this, "User Added Sucessfully", Toast.LENGTH_SHORT).show()

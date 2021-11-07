@@ -24,14 +24,14 @@ class UserViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
             timer.isVisible = false
 
             title.text = user.name
-            subTitle.text = user.Status
+            subTitle.text = user.status
 
             Picasso.get().load(user.thumbImage).placeholder(R.drawable.avatar_default)
                 .error(R.drawable.avatar_default)
                 .into(image)
 
             setOnClickListener() {
-                onClick.invoke(user.name, user.thumbImage, user.uId)
+                onClick.invoke(user.name, user.thumbImage, user.uid)
             }
         }
 }

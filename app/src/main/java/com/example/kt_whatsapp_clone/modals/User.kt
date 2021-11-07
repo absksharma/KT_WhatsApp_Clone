@@ -4,20 +4,20 @@ data class User(
     val name: String,
     val imageUrl: String,
     val thumbImage: String,
-    val uId: String,
+    val uid: String,
     val deviceToken: String,
-    val Status: String,
-    val onlineState: String
+    val status: String,
+    val online: Boolean
 
 ) {
-    constructor() : this("", "", "", "", "", "", "")
-    constructor(name: String, imageUrl: String, thumbImage: String, uId: String) : this(
+    constructor() : this("", "", "", "", "", "", false)
+    constructor(name: String, imageUrl: String, thumbImage: String, uid: String) : this(
         name,
         imageUrl,
         thumbImage,
-        uId,
+        uid,
         "",
-        "Hey There! i'm using whats app",
-        ""
+        status = "hey there i'm using Whats App",
+        online = false
     )
 }

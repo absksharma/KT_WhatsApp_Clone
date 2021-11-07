@@ -1,6 +1,7 @@
 package com.example.kt_whatsapp_clone
 
 import android.os.Bundle
+import android.view.Menu
 import androidx.appcompat.app.AppCompatActivity
 import com.example.kt_whatsapp_clone.adapters.ScreenSliderAdapter
 import com.example.kt_whatsapp_clone.databinding.ActivityMainBinding
@@ -26,6 +27,14 @@ class MainActivity : AppCompatActivity() {
                 }
             }).attach()
 
+
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+
+        menuInflater.inflate(R.menu.activity_menu,menu)
+
+        return super.onCreateOptionsMenu(menu)
 
     }
 }

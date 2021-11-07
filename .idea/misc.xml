@@ -3,8 +3,10 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Abhishek/AndroidStudioProjects/KT_WhatsApp_Clone/app/src/main/res/drawable/chat_icon.xml" value="0.19675925925925927" />
         <entry key="..\:/Users/Abhishek/AndroidStudioProjects/KT_WhatsApp_Clone/app/src/main/res/drawable/count_background.xml" value="0.22135416666666666" />
-        <entry key="..\:/Users/Abhishek/AndroidStudioProjects/KT_WhatsApp_Clone/app/src/main/res/layout/activity_chat.xml" value="0.1331081081081081" />
+        <entry key="..\:/Users/Abhishek/AndroidStudioProjects/KT_WhatsApp_Clone/app/src/main/res/layout-v26/activity_chat.xml" value="0.20520833333333333" />
+        <entry key="..\:/Users/Abhishek/AndroidStudioProjects/KT_WhatsApp_Clone/app/src/main/res/layout/activity_chat.xml" value="0.33" />
         <entry key="..\:/Users/Abhishek/AndroidStudioProjects/KT_WhatsApp_Clone/app/src/main/res/layout/activity_login.xml" value="0.22" />
         <entry key="..\:/Users/Abhishek/AndroidStudioProjects/KT_WhatsApp_Clone/app/src/main/res/layout/activity_main.xml" value="0.20520833333333333" />
         <entry key="..\:/Users/Abhishek/AndroidStudioProjects/KT_WhatsApp_Clone/app/src/main/res/layout/activity_otp.xml" value="0.25" />
@@ -13,6 +15,8 @@
         <entry key="..\:/Users/Abhishek/AndroidStudioProjects/KT_WhatsApp_Clone/app/src/main/res/layout/fragment_chat.xml" value="0.1" />
         <entry key="..\:/Users/Abhishek/AndroidStudioProjects/KT_WhatsApp_Clone/app/src/main/res/layout/fragment_people.xml" value="1.4071428571428573" />
         <entry key="..\:/Users/Abhishek/AndroidStudioProjects/KT_WhatsApp_Clone/app/src/main/res/layout/list_item.xml" value="0.33" />
+        <entry key="..\:/Users/Abhishek/AndroidStudioProjects/KT_WhatsApp_Clone/app/src/main/res/layout/list_item_chat_send.xml" value="0.22" />
+        <entry key="..\:/Users/Abhishek/AndroidStudioProjects/KT_WhatsApp_Clone/app/src/main/res/menu/activity_menu.xml" value="0.1331081081081081" />
       </map>
     </option>
   </component>

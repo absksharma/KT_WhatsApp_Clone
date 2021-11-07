@@ -1,4 +1,4 @@
-package com.example.kt_whatsapp_clone
+package com.example.kt_whatsapp_clone.auth
 
 import android.Manifest
 import android.content.Intent
@@ -10,7 +10,9 @@ import android.widget.Toast
 import androidx.activity.result.ActivityResultCallback
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
+import com.example.kt_whatsapp_clone.MainActivity
 import com.example.kt_whatsapp_clone.databinding.ActivitySignUpBinding
+import com.example.kt_whatsapp_clone.modals.User
 import com.google.android.gms.tasks.Continuation
 import com.google.android.gms.tasks.Task
 import com.google.firebase.auth.FirebaseAuth
@@ -20,13 +22,13 @@ import com.google.firebase.storage.UploadTask
 
 class SignUpActivity : AppCompatActivity() {
     private lateinit var binding: ActivitySignUpBinding
-    val storage by lazy {
+    private val storage by lazy {
         FirebaseStorage.getInstance()
     }
-    val auth by lazy {
+    private val auth by lazy {
         FirebaseAuth.getInstance()
     }
-    val dataBase by lazy {
+    private val dataBase by lazy {
         FirebaseFirestore.getInstance()
     }
     lateinit var downloadUrl: String
@@ -50,8 +52,10 @@ class SignUpActivity : AppCompatActivity() {
             } else {
                 val user = User(name, downloadUrl, downloadUrl, auth.uid!!)
                 /** Send data To data Base **/
+
                 dataBase.collection("users").document(auth.uid!!).set(user).addOnSuccessListener {
                     startActivity(Intent(this, MainActivity::class.java))
+                    finish()
                 }.addOnFailureListener {
                     binding.nextBtn.isEnabled = true
                 }
@@ -100,9 +104,6 @@ class SignUpActivity : AppCompatActivity() {
                 downloadUrl = task.result.toString()
                 Log.i("URL", "Image URL : $downloadUrl")
             }
-
         }
-
-
     }
 }
