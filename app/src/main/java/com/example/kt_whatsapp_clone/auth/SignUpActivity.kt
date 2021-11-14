@@ -41,6 +41,10 @@ class SignUpActivity : AppCompatActivity() {
         binding.userImgView.setOnClickListener {
             checkPermissionForImage()
         }
+        binding.btnSkip.setOnClickListener {
+            startActivity(Intent(this, MainActivity::class.java))
+            finish()
+        }
         binding.nextBtn.setOnClickListener {
             binding.nextBtn.isEnabled = false
 

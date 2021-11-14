@@ -127,7 +127,6 @@ class OtpActivity : AppCompatActivity(), View.OnClickListener {
                 verificationId: String,
                 token: PhoneAuthProvider.ForceResendingToken
             ) {
-
                 progressDialog.dismiss()
                 binding.counterTv.isVisible = false
                 // Save verification ID and resending token so we can use them later
@@ -191,7 +190,6 @@ class OtpActivity : AppCompatActivity(), View.OnClickListener {
         )
         binding.waitingTv.movementMethod = LinkMovementMethod.getInstance()
         binding.waitingTv.text = span
-
     }
 
     private fun showLoginActivity() {

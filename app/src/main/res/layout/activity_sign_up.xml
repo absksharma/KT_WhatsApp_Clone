@@ -6,16 +6,35 @@
     android:layout_height="match_parent"
     android:gravity="center_horizontal"
     android:orientation="vertical"
+    android:paddingTop="50dp"
     tools:context=".auth.SignUpActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="28dp"
-        android:text="Profile Info"
-        android:textColor="@color/purple_500"
-        android:textSize="24sp"
-        android:textStyle="bold" />
+        android:gravity="end"
+        android:orientation="horizontal">
+
+        <TextView
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="Profile Info"
+            android:textColor="@color/purple_500"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/btnSkip"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:gravity="fill_vertical"
+            android:text="SKIP>>" />
+
+
+    </LinearLayout>
 
 
     <TextView
@@ -75,5 +94,6 @@
         android:textSize="18sp"
         android:textStyle="normal"
         app:cornerRadius="5dp" />
+
 
 </LinearLayout>

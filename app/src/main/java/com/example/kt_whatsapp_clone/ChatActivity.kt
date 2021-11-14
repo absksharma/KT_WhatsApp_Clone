@@ -1,5 +1,7 @@
 package com.example.kt_whatsapp_clone
 
+import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
@@ -78,7 +80,10 @@ class ChatActivity : AppCompatActivity() {
                 }
             }
         }
-
+        binding.swipeToLoad.setOnRefreshListener {
+            listenToMessages()
+            binding.swipeToLoad.isRefreshing = false
+        }
     }
 
     private fun listenToMessages() {
@@ -169,6 +174,7 @@ class ChatActivity : AppCompatActivity() {
         }
     }
 
+
     private fun markAsRead() {
         getInbox(friendId, mCurrentUid).child("count").setValue(0)
     }
@@ -185,6 +191,17 @@ class ChatActivity : AppCompatActivity() {
             mCurrentUid + friendId
         } else {
             friendId + mCurrentUid
+        }
+    }
+
+    companion object {
+
+        fun createChatActivity(context: Context, id: String, name: String, image: String): Intent {
+            val intent = Intent(context, ChatActivity::class.java)
+            intent.putExtra(UID, id)
+            intent.putExtra(NAME, name)
+            intent.putExtra(IMAGE, image)
+            return intent
         }
     }
 

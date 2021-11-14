@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.kt_whatsapp_clone.R
 import com.example.kt_whatsapp_clone.modals.ChatEvent
 import com.example.kt_whatsapp_clone.modals.DateHeader
+import com.example.kt_whatsapp_clone.modals.Inbox
 import com.example.kt_whatsapp_clone.modals.Message
 import com.example.kt_whatsapp_clone.utils.formatAsTime
 
@@ -55,7 +56,12 @@ class ChatAdapter(private val list: MutableList<ChatEvent>, private val mCurrent
     override fun getItemCount(): Int = list.size
 
     class DateViewHolder(view: View) : RecyclerView.ViewHolder(view)
-    class ChatViewHolder(view: View) : RecyclerView.ViewHolder(view)
+
+    class ChatViewHolder(view: View) : RecyclerView.ViewHolder(view) {
+        fun bind(inbox: Inbox, function: (String, String, String) -> Unit) {
+
+        }
+    }
 
     override fun getItemViewType(position: Int): Int {
         return when (val event = list[position]) {

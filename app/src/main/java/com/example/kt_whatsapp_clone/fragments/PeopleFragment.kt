@@ -1,5 +1,6 @@
 package com.example.kt_whatsapp_clone.fragments
 
+import android.app.ProgressDialog
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
@@ -19,13 +20,12 @@ import com.firebase.ui.firestore.paging.LoadingState
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 
-
 private const val NORMAL_VIEW_TYPE = 2
 private const val DELETED_VIEW_TYPE = 1
 
 class PeopleFragment : Fragment(R.layout.fragment_chat) {
     private lateinit var binding: FragmentChatBinding
-
+    lateinit var progressDialog: ProgressDialog
     private lateinit var mAdapter: FirestorePagingAdapter<User, RecyclerView.ViewHolder>
 
     val auth by lazy {
@@ -40,12 +40,16 @@ class PeopleFragment : Fragment(R.layout.fragment_chat) {
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
     ): View? {
         binding = FragmentChatBinding.inflate(inflater, container, false)
+
+        progressDialog = createProgressDialog("Fetching Users", false)
+        progressDialog.show()
         setupAdapter()  /* SETTING ADAPTER TO RECYCLER VIEW */
+        progressDialog.dismiss()
         return binding.root
     }
 
-    private fun setupAdapter() {
 
+    private fun setupAdapter() {
         val config = PagedList.Config.Builder()
             .setEnablePlaceholders(false)
             .setPrefetchDistance(2)
@@ -66,7 +70,13 @@ class PeopleFragment : Fragment(R.layout.fragment_chat) {
             ): RecyclerView.ViewHolder {
                 return when (viewType) {
                     NORMAL_VIEW_TYPE -> {
-                        UserViewHolder(layoutInflater.inflate(R.layout.list_item, parent, false))
+                        UserViewHolder(
+                            layoutInflater.inflate(
+                                R.layout.list_item,
+                                parent,
+                                false
+                            )
+                        )
                     }
                     else -> EmptyViewHolder(
                         layoutInflater.inflate(
@@ -132,6 +142,14 @@ class PeopleFragment : Fragment(R.layout.fragment_chat) {
         binding.rvChat.apply {
             layoutManager = LinearLayoutManager(requireContext())
             adapter = mAdapter
+        }
+    }
+
+    fun createProgressDialog(message: String, isCancelable: Boolean): ProgressDialog {
+        return ProgressDialog(context).apply {
+            setCancelable(false)
+            setMessage(message)
+            setCanceledOnTouchOutside(false)
         }
     }
 }

@@ -11,7 +11,7 @@ import com.squareup.picasso.Picasso
 
 class UserViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
-    fun bind(user: User, onClick: (name: String, photo: String, id: String) -> Unit) =
+   fun bind(user: User, onClick: (name: String, photo: String, id: String) -> Unit) =
         with(itemView) {
 
             val timer = findViewById<TextView>(R.id.timeTv)
